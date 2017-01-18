@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta charset="utf-8">
+  <!-- utf-8 works for most cases -->
+  <meta name="viewport" content="width=device-width">
+  <!-- Forcing initial-scale shouldn't be necessary -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Use the latest (edge) version of IE rendering engine -->
+  <meta name="x-apple-disable-message-reformatting">
+  <!-- Disable auto-scale in iOS 10 Mail entirely -->
+  <title></title>
+  <!-- The title tag shows in email notifications, like Android 4.4. -->
+
+  <!-- Web Font / @font-face : BEGIN -->
+  <!-- NOTE: If web fonts are not required, lines 10 - 27 can be safely removed. -->
+
+  <!-- Desktop Outlook chokes on web font references and defaults to Times New Roman, so we force a safe fallback font. -->
+  <!--[if mso]>
+        <style>
+            * {
+                font-family: sans-serif !important;
+            }
+        </style>
+    <![endif]-->
+
+  <!-- All other clients get the webfont reference; some will render the font and others will silently fail to the fallbacks. More on that here: http://stylecampaign.com/blog/2015/02/webfont-support-in-email/ -->
+  <!--[if !mso]><!-->
+  <!-- insert web font reference, eg: <link href='https://fonts.googleapis.com/css?family=Roboto:400,700' rel='stylesheet' type='text/css'> -->
+  <!--<![endif]-->
+
+  <!-- Web Font / @font-face : END -->
+
+  <!-- CSS Reset -->
+  <style>
+    /* What it does: Remove spaces around the email design added by some email clients. */
+    /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+
+    html,
+    body {
+      margin: 0 auto !important;
+      padding: 0 !important;
+      height: 100% !important;
+      width: 100% !important;
+    }
+    /* What it does: Stops email clients resizing small text. */
+
+    * {
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+    /* What is does: Centers email on Android 4.4 */
+
+    div[style*="margin: 16px 0"] {
+      margin: 0 !important;
+    }
+    /* What it does: Stops Outlook from adding extra spacing to tables. */
+
+    table,
+    td {
+      mso-table-lspace: 0pt !important;
+      mso-table-rspace: 0pt !important;
+    }
+    /* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+
+    table {
+      border-spacing: 0 !important;
+      border-collapse: collapse !important;
+      table-layout: fixed !important;
+      margin: 0 auto !important;
+    }
+
+    table table table {
+      table-layout: auto;
+    }
+    /* What it does: Uses a better rendering method when resizing images in IE. */
+
+    img {
+      -ms-interpolation-mode: bicubic;
+    }
+    /* What it does: A work-around for iOS meddling in triggered links. */
+
+    .mobile-link--footer a,
+    a[x-apple-data-detectors] {
+      color: inherit !important;
+      text-decoration: underline !important;
+    }
+    /* What it does: Prevents underlining the button text in Windows 10 */
+
+    .button-link {
+      text-decoration: none !important;
+    }
+    /* What it does: Removes right gutter in Gmail iOS app: https://github.com/TedGoas/Cerberus/issues/89  */
+    /* Create one of these media queries for each additional viewport size you'd like to fix */
+    /* Thanks to Eric Lepetit @ericlepetitsf) for help troubleshooting */
+
+    @media only screen and (min-device-width: 375px) and (max-device-width: 413px) {
+      /* iPhone 6 and 6+ */
+      .email-container {
+        min-width: 375px !important;
+      }
+    }
+  </style>
+
+  <!-- Progressive Enhancements -->
+  <style>
+    /* What it does: Hover styles for buttons */
+
+    .button-td,
+    .button-a {
+      transition: all 100ms ease-in;
+    }
+
+    .button-td:hover,
+    .button-a:hover {
+      background: #555555 !important;
+      border-color: #555555 !important;
+    }
+
+    .background{
+      background-image: url("https://github.com/jellynina/tios-dem/blob/master/img/body-bg.gif?raw=true");
+    }
+  </style>
+
+</head>
+
+<body width="100%" bgcolor="#f0f0f0" style="margin: 0; mso-line-height-rule: exactly;">
+  <center style="width: 100%; background: #f0f0f0;">
+
+    <!-- Visually Hidden Preheader Text : BEGIN -->
+    <div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;">
+      The exhibition of 2017 Taiwan International Orchid Show will be grandly held from 4th to 13th March, 2017 at Taiwan Orchid Plantation(TOP). The opening ceremony starts at 10:00am on 3rd March, 2017. Your presence and guidance are appreciated.
+    </div>
+    <!-- Visually Hidden Preheader Text : END -->
+
+    <!--
+            Set the email width. Defined in two places:
+            1. max-width for all clients except Desktop Windows Outlook, allowing the email to squish on narrow but never go wider than 600px.
+            2. MSO tags for Desktop Windows Outlook enforce a 600px width.
+        -->
+    <div style="max-width: 600px; margin: auto;" class="email-container">
+      <!--[if mso]>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" align="center">
+            <tr>
+            <td>
+            <![endif]-->
+
+      <!-- Email Header : BEGIN -->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;">
+        <tr>
+          <td style="padding: 20px 0; text-align: center">
+            <!-- <img src="http://placehold.it/200x50" width="200" height="50" alt="alt_text" border="0" style="height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;"> -->
+          </td>
+        </tr>
+      </table>
+      <!-- Email Header : END -->
+
+      <!-- Email Body : BEGIN -->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 600px;" background="https://github.com/jellynina/tios-dem/blob/master/img/body-bg.gif?raw=true" class="background">
+
+        <!-- Hero Image, Flush : BEGIN -->
+        <tr>
+          <td>
+            <img src="https://github.com/jellynina/tios-dem/blob/master/img/header.gif?raw=true" width="600" height="" alt="alt_text" border="0" align="center" style="width: 100%; max-width: 600px; height: auto; background: #dddddd; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555;">
+          </td>
+        </tr>
+        <!-- Hero Image, Flush : END -->
+        <!-- 1 Title and logo : BEGIN -->
+        <tr>
+          <td align="center" height="100%" valign="top" width="100%" style="padding-bottom: 20px">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:560px;">
+              <tr>
+                <td align="center" valign="top" width="85%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                    <tr>
+                      <td style="text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 15px 10px 0;">
+                        <img src="https://github.com/jellynina/tios-dem/blob/master/img/title.gif?raw=true" alt="taiwan international orchid show" style="max-width: 100%;">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td align="center" valign="top" width="15%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: right;">
+                    <tr>
+                      <td style="text-align: left; font-family: sans-serif; font-size: 15px; line-height: 20px; color: #555555; padding: 15px 10px 0;">
+                        <img src="https://github.com/jellynina/tios-dem/blob/master/img/tioslogo.gif?raw=true" alt="TIOS LOGO" style="max-width: 100%;">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- 1 Title and logo : END -->
+
+
+        <!-- 2 Column Text + Button : BEGIN -->
+        <tr>
+          <td>
+            <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%">
+              <tr>
+                <td style="padding: 5px 40px; font-family: sans-serif; font-size: 13px; line-height: 20px; color: #555555;">
+                  The exhibition of 2017 Taiwan International Orchid Show will be grandly held<br>from 4th to 13th March, 2017 at Taiwan Orchid Plantation(TOP).<br>The opening ceremony starts at 10:00am on 3rd March, 2017.<br>Your presence and guidance are appreciated.
+                  <br><br>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- 2 Column Text + Button : END -->
+
+        <!-- 3 Sign Columns : BEGIN -->
+        <tr>
+          <td align="center" height="100%" valign="top" width="100%" style="padding-bottom: 20px; padding-left: 40px;">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:560px;">
+              <tr>
+                <td align="center" valign="top2" width="70%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                    <tr>
+                      <td style="text-align: left; font-family: sans-serif; font-size: 10px; line-height: 20px; color: #7A6A56; padding: 10px 0px 0;" class="stack-column-center">
+                        Minister of Council of Agriculture, Executive Yuan, R.O.C.<br>Mayor of Tainan City / President of TIOS 2017<br>Chairman of Taiwan External Trade Development Council<br>Honorary President of TOGA / Chairman of TIOS 2017
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td align="center" valign="top" width="30%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                    <tr>
+                      <td style="text-align: right; font-family: sans-serif; font-size: 10px; line-height: 20px; color: #7A6A56; padding: 10px 10px 0;">
+                        Chi-Hung Tsao<br>Ching-Te Lai<br>James C.F. Huang<br>Shi-Shu Chen
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- 3 Sign Columns : END -->
+
+        <!-- 4 QR Columns : BEGIN -->
+        <tr>
+          <td align="center" height="100%" valign="top" width="100%" style="padding-bottom: 40px">
+            <table role="presentation" border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:560px;">
+              <tr style="position: relative">
+                <td align="center" valign="top" width="35%" style="">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                    <tr>
+                      <td style="text-align: center; font-family: sans-serif; font-size: 10px; line-height: 20px; color: #555555; padding: 10px 10px 0; position: relative" class="stack-column-center">
+                        <img style="text-align: center; max-width: 100%;" src="https://github.com/jellynina/tios-dem/blob/master/img/orchidinvitation.gif?raw=true" alt="invitation">
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+                <td align="center" valign="top" width="30%" >
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                    <tr width="100%">
+                      <td style="text-align: center; font-family: sans-serif; font-size: 10px; line-height: 20px; color: #555555; padding:0; position: relative" class="stack-column-center" width="100%" colspan="2">
+                        <img style="texr-align: center; max-width: 100%;" src="https://github.com/jellynina/tios-dem/blob/master/img/img.gif?raw=true" alt="some beautiful orchid flower on border">
+                      </td>
+                    </tr>
+                    <!-- <tr width="100%" style="margin-top: -20px">
+                      <td width="50%" height="100px" style="border-right: 2px #595757 solid"></td>
+                      <td width="50%"></td>
+                    </tr> -->
+                  </table>
+                </td>
+                <td align="center" valign="top" width="35%">
+                  <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;text-align: left;">
+                    <tr>
+                      <td style="text-align: right; font-family: sans-serif; font-size: 10px; line-height: 20px; color: #7A6A56; padding: 20px 10px 0;">
+                        No.325, Wushulin, Houbi Dist.,<br> Tainan City, Taiwan (R.O.C.)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 40px 0px 0;">
+                        <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 10px;text-align: center;">
+                          <tr style="text-align: center; font-family: sans-serif; font-size: 10px; line-height: 20px; color: #7A6A56;">
+                            <td>
+                              <img src="https://github.com/jellynina/tios-dem/blob/master/img/qr-site.gif?raw=true" alt="tios website qr code" style="max-width: 100%;"><br><a href="http://tios.org.tw/tios/" style="color: #7A6A56;">Offical Site</a>
+                            </td>
+                            <td>
+                              <img src="https://github.com/jellynina/tios-dem/blob/master/img/qr-fb.gif?raw=true" alt="tios facebook qr code" style="max-width: 100%;"><br><a href="https://www.facebook.com/2017TW.Orchid.Show/" style="color: #7A6A56;">Facebook</a>
+
+                            </td>
+                          </tr>
+
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <!-- 3 Sign Columns : END -->
+
+        <!-- Clear Spacer : BEGIN -->
+        <tr>
+          <td height="0" style="font-size: 0; line-height: 0;">
+            &nbsp;
+          </td>
+        </tr>
+        <!-- Clear Spacer : END -->
+
+      </table>
+      <!-- Email Body : END -->
+
+      <!-- Email Footer : BEGIN -->
+      <table role="presentation" cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
+        <tr>
+          <td style="padding: 40px 10px;width: 100%;font-size: 12px; font-family: sans-serif; line-height:18px; text-align: center; color: #888888;">
+            <br><br> 2017 TIOS<br><span class="mobile-link--footer">No.325, Wushulin, Houbi Dist., Tainan City, Taiwan (R.O.C.) </span><br><span class="mobile-link--footer">(+886) 06-2088983, 06-2089053</span><br>
+            <a href="http://tios.org.tw/tios/" style="text-align:center;">2017 TIOS Offical Site</a>
+
+            <br><br>
+          </td>
+        </tr>
+      </table>
+      <!-- Email Footer : END -->
+
+      <!--[if mso]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+    </div>
+  </center>
+</body>
+
+</html>
